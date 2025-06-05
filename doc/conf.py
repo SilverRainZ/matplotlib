@@ -33,7 +33,10 @@ import matplotlib
 print(f"Building Documentation for Matplotlib: {matplotlib.__version__}")
 
 # Release mode enables optimizations and other related options.
-is_release_build = tags.has('release')  # noqa
+try:
+    is_release_build = tags.has('release')  # noqa
+except Exception:
+    is_release_build = False
 
 # are we running circle CI?
 CIRCLECI = 'CIRCLECI' in os.environ
