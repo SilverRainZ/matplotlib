@@ -2,7 +2,6 @@
 
 .. module:: matplotlib
 
-
 ##################################
 Matplotlib |release| documentation
 ##################################
