@@ -134,7 +134,7 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - sphinx-env-v1-{{ .BuildNum }}-{{ .Environment.CIRCLE_JOB }}
+            - sphinx-env-v1
             - sphinx-env-v1-{{ .Environment.CIRCLE_PREVIOUS_BUILD_NUM }}-{{ .Environment.CIRCLE_JOB }}
       - run:
           name: Build documentation
@@ -153,7 +153,7 @@ commands:
             rm -r build/html/_sources
           working_directory: doc
       - save_cache:
-          key: sphinx-env-v1-{{ .BuildNum }}-{{ .Environment.CIRCLE_JOB }}
+          key: sphinx-env-v1
           paths:
             # - doc/build/doctrees
             - /tmp/sphinxnotes-incrbuild
